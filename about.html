@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us</title>
+  <style>
+    body {
+      font-family: 'Times New Roman', Times, serif;
+      background-color: #0c68743c;
+      margin: 1;
+      padding: 1;
+    }
+
+    header {
+      background-blend-mode: lighten;
+      border-color: aqua;
+      background-color: rgba(98, 164, 218, 0.797);
+      color: #110909;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .container {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      padding: 20px;
+    }
+
+    .student {
+      width: 200px;
+      margin: 20px;
+      background-color: #bbf0e1;
+      box-shadow: 0 0 10px rgba(2, 47, 83, 0.1);
+      text-align: center;
+      padding: 20px;
+
+    }
+
+    .student img {
+      max-width: 100%;
+      border-radius: 0%;
+    }
+
+    h2 {
+      color: #050000;
+    }
+
+    .contact {
+      height: 90vh;
+      background-image: linear-gradient(to right,
+          rgba(235, 129, 120, 0.4),
+          rgba(152, 241, 243, 0.4),
+          rgba(240, 138, 244, 0.4)),
+        url(contact.jpg);
+      background-position: center;
+      background-size: cover;
+      background-attachment: fixed;
+      backface-visibility: hidden;
+      margin-top: 0vh;
+      clip-path: none;
+
+      background-position: center;
+      background-size: cover;
+      text-align: center;
+    }
+
+    .contact .head-secondary {
+      color: #000000;
+      margin-top: 0rem;
+      margin-bottom: 0rem;
+      background-position: center;
+      background-size: cover;
+      text-align: center;
+    }
+
+    .contact-info {
+      font-size: 2.5rem;
+      letter-spacing: 0.4rem;
+      color: #3d001d;
+      background-position: center;
+      background-size: cover;
+      text-align: center;
+    }
+
+    .contact-number {
+      font-size: 1.2rem;
+      background-position: center;
+      background-size: cover;
+      text-align: center;
+      color: #00a33e;
+    }
+
+    .about {
+      height: 100vh;
+      background: #05092a;
+      margin-top: 15vh;
+      background-position: center;
+      background-size: cover;
+      text-align: center;
+    }
+
+    .about-logo {
+      margin-top: 15vh;
+      display: inline-block;
+      background-position: center;
+      background-size: cover;
+      text-align: center;
+    }
+
+    .about .head-secondary {
+      color: #fff;
+      letter-spacing: 1rem;
+      font-weight: 200;
+      background-position: center;
+      background-size: cover;
+      text-align: center;
+    }
+
+    .about-info {
+      font-size: 1.5rem;
+      letter-spacing: 0.7rem;
+      color: #fff;
+      margin-bottom: 5rem;
+      background-position: center;
+      background-size: cover;
+      text-align: center;
+    }
+
+    .jazz a {
+      text-decoration: none;
+      font-size: 1.5rem;
+      letter-spacing: 1rem;
+      background: linear-gradient(to right,
+          orange,
+          rgb(237, 237, 96),
+          rgb(119, 246, 119),
+          cyan,
+          rgb(94, 94, 201),
+          rgb(234, 106, 234));
+      color: transparent;
+      cursor: pointer;
+      -webkit-background-clip: text;
+      background-position: center;
+      background-size: cover;
+      text-align: center;
+    }
+
+    .jazz {
+      transition: 0.2s;
+      display: inline-block;
+      background-position: center;
+      background-size: cover;
+      text-align: center;
+    }
+
+    .jazz:hover {
+      transform: scale(1.1) rotate(-2deg);
+      box-shadow: 0 14px 28px rgba(246, 37, 37, 0.25), 0 10px 10px rgba(0, 35, 37, 0.22);
+      background-position: center;
+      background-size: cover;
+    }
+
+    @media only screen and (max-width: 790px) {
+      html {
+        font-size: 40%;
+        background-position: center;
+        background-size: cover;
+      }
+
+      .section-about {
+        margin-top: -20vh;
+        background-position: center;
+        background-size: cover;
+      }
+
+      .card-parent {
+        width: 40rem;
+      }
+
+      .contact .head-secondary {
+        margin-top: 30rem;
+        font-size: 2.5rem;
+        margin-bottom: 15rem;
+      }
+
+
+
+      .about-info {
+        margin-bottom: 10rem;
+      }
+    }
+
+    ::-webkit-scrollbar {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>About Us</h1>
+  </header>
+  <section>
+    <div class="contact">
+      <div class="center">
+        <h1 class="head-secondary">
+          Contact Us:
+        </h1>
+        <div class="container">
+          <div class="student">
+            <img src="priyanshi.jpg" alt="Student 1">
+            <h2><b>Priyanshi Das</b></h2>
+            <p><b>Computer Engineer</b></p>
+          </div>
+
+          <div class="student">
+            <img src="shubhangi.jpg" alt="Student 2">
+            <h2><b>Shubhangi Mohite</b></h2>
+            <p><b>Computer Engineer</b></p>
+          </div>
+
+          <div class="student">
+            <img src="nirmal.png" alt="Student 3">
+            <h2><b> Nirmalraj K.</b></h2>
+            <p><b>Computer Engineer</b></p>
+          </div>
+
+          <div class="student">
+            <img src="sujal.png" alt="Student 4">
+            <h2><b>Sujal Mujawar</b></h2>
+            <p><b>Computer Engineer</b>
+            </p>
+          </div>
+        </div>
+
+        <div class="contact-info">
+          <br><br>
+          <div class="contact-number">
+            <b>+91 7016037094</b><br><br>
+            <b>+91 7276018821</b>
+          </div><br><br>
+          Find us at :<br><br>
+          <div class="contact-number">
+            Address : St John College of Engineering and Management
+          </div>
+        </div>
+      </div>
+    </div><br><br><br><br>
+  </section>
+  <section>
+    <div class="about">
+      <div class="center">
+        <div class="about-logo">
+          <img src="HAND.jpg" class="logo" alt="Logo"> <br><br>
+        </div><br>
+        <h1 class="head-secondary"><em> Hand Easy </em></h1>
+        <div class="about-info">
+          @Copyright © by Debuggers <br> <br>
+          All Rights Reserved.
+        </div>
+        <div class="jazz">
+          <a target="_blank" href="about.html">Built By Debuggers</a>
+          <div>
+          </div>
+        </div>
+  </section>
+  </main>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script type="text/javascript" src="script/script.js"></script>
+
+</body>
+
+</body>
+
+</html>

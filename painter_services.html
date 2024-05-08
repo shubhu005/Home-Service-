@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Painter Service</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #333638;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+        }
+        h1 {
+            font-size: 24px;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 50px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        p {
+            font-size: 18px;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+        input[type="date"], input[type="time"], input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        a {
+            text-decoration: none;
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Painter Service</h1>
+    </header>
+   
+
+    <div class="container">
+        <h2>Book a Painter</h2>
+        <p>Select a day and time for your painter service:</p>
+        <form id="bookingForm">
+            <label for="bookingDate">Select Date:</label>
+            <input type="date" id="bookingDate" required>
+        </br> 
+            <label for="bookingTime">Select Time:</label>
+            <input type="time" id="bookingTime" required>
+        </br> 
+            <label for="Location">Location:</label>
+        </br>
+            <input type="text" id="Location" name="Location" required>
+        </br> </br>
+
+            <input type="submit" value="Book Painter">
+        </form>
+       
+            <h2>Welcome to Our Painter Service</h2>
+        <ul>
+            <li>Interior painting</li>
+            <li>Exterior painting</li>
+            <li>Color consultations</li>
+            <li>Custom finishes</li>
+            <li>And more</li>
+        </ul>
+    
+</div>
+
+    <script>
+        const bookingForm = document.getElementById('bookingForm');
+
+        bookingForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const selectedDate = document.getElementById('bookingDate').value;
+            const selectedTime = document.getElementById('bookingTime').value;
+
+            // Here, you can send the booking details to the server for processing.
+            // You would typically make an API request to your back-end to store the booking.
+
+            alert(`Painter booked for ${selectedDate} at ${selectedTime}`);
+        });
+    </script>
+</body>
+</html>

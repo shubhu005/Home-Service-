@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+
+
+<head>
+    <style>
+        body {
+  padding: 1rem 2.5rem;
+  font-family: "Roboto", sans-serif;
+  box-sizing: border-box;
+}
+
+.header {
+  height: 95vh;
+  background-image: linear-gradient(
+      to right,
+      rgba(95, 91, 126, 0.4),
+      rgba(60, 44, 241, 0.4),
+      rgba(70, 238, 238, 0.4)
+    ),
+    url(home.png);
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  position: relative;
+  clip-path: polygon(0 0, 80% 0, 100% 30%, 100% 100%, 20% 100%, 0 70%);
+}
+
+.logo-box {
+  position: absolute;
+  top: 2.5rem;
+  left: 2.5rem;
+  transition: 0.3s;
+}
+
+.logo {
+  width: 7rem;
+}
+
+.logo-box:hover {
+  cursor: pointer;
+  transform: rotate(360deg);
+}
+
+.text-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.heading-primary {
+  color: #fff;
+  text-transform: uppercase;
+  backface-visibility: hidden;
+}
+
+.heading-primary-main {
+  font-size: 8rem;
+  letter-spacing: 2rem;
+  font-family: monospace;
+  display: flow-root;
+  margin-bottom: 2rem;
+}
+
+.heading-primary-sub {
+  display: block;
+  font-size: 2rem;
+  letter-spacing: 1rem;
+  font-family: cursive;
+  margin-bottom: 10rem;
+}
+
+.btn:link,
+.btn:visited {
+  text-decoration: none;
+  padding: 2rem 5rem;
+  display: inline-block;
+  border-radius: 5rem;
+  font-weight: bold;
+  letter-spacing: 0.5rem;
+  font-size: 1.6rem;
+  transition: 0.2s;
+  border: none;
+  position: relative;
+}
+
+.btn:hover {
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.5);
+  color: #fff;
+  background: #007bff;
+}
+.btn-primary {
+  background-color: #fff;
+  color: rgb(15, 12, 41);
+}
+
+.btn::after {
+  content: "";
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  border-radius: 5rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: 0.3s;
+}
+
+.btn-primary::after {
+  background-color: #fff;
+}
+
+.btn:hover::after {
+  transform: scale(2);
+  opacity: 0;
+}
+
+.section-about {
+  background: rgb(250, 250, 250);
+  padding: 30rem 0 20rem 0;
+  margin-top: -30vh;
+}
+
+
+
+    </style>
+
+</head>
+
+
+
+
+<body>
+	<header class="header">
+       
+		<div class="logo-box">
+			<img src="HAND.jpg" class="logo" alt="Logo">
+			
+		</div>
+		<div class="text-box">
+			<div class="heading-primary">
+				<span class="heading-primary-main"><b>Hand Easy<b></span>
+				<span class="heading-primary-sub">Make it Easy!!</span>
+			</div>
+			<a href="index1.html" class="btn btn-primary">Know More.</a>	
+		</div>
+	</header>
+</body>
+</html> 
+

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><b>Service Provider Dashboard</b></title>
+    <style>
+        /* Basic CSS styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom, #9698f8, #f4895b);
+            color: #250000;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: rgba(62, 248, 235, 0.9);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-image: url('paint1.avif');
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #310129;
+        }
+
+        .profile-info {
+            margin-bottom: 20px;
+        }
+
+        .stats {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .stat {
+            flex: 1;
+            text-align: center;
+            border: 1px solid #10edaa;
+            border-radius: 5px;
+            padding: 10px;
+            background: linear-gradient(to bottom, #6cf194, #f763f7);
+            color: #680d0d;
+        }
+
+        .booking {
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid #4feebc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        .booking-details {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .customer-info {
+            flex: 1;
+        }
+
+        .action-buttons {
+            display: flex;
+            align-items: center;
+        }
+
+        .action-buttons button {
+            margin-left: 10px;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+
+        .accept {
+            background-color: #4caf50;
+            color: #fff;
+            border: none;
+        }
+
+        .reject {
+            background-color: #f44336;
+            color: #fff;
+            border: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Service Provider Dashboard</h1>
+        <div class="profile-info">
+            <h2>MY Profile</h2>
+            <!-- Your profile information goes here -->
+            <p><strong>Name:</strong> John Doe</p>
+            <p><strong>Email:</strong> john123@gmail.com</p>
+            <p><strong>Phone:</strong> 123456789</p>
+            <p><strong>Location:</strong> Palghar</p>
+            <!-- Add more profile information as needed -->
+        </div>
+        <div class="stats">
+            <div class="stat">
+                <h3>Total Orders</h3>
+                <p>5</p> <!-- Example value, replace with actual data -->
+            </div>
+            <div class="stat">
+                <h3>Completed Orders</h3>
+                <p>4</p> <!-- Example value, replace with actual data -->
+            </div>
+            <div class="stat">
+                <h3>Pending Orders</h3>
+                <p>1</p> <!-- Example value, replace with actual data -->
+            </div>
+        </div>
+        <!-- Booking section -->
+        <div class="booking">
+            <h2>New Booking</h2>
+            <div class="booking-details">
+                <div class="customer-info">
+                    <p><strong>Customer Name:</strong> Jane Smith</p>
+                    <p><strong>Date:</strong> 2024-02-16</p>
+                    <p><strong>Time:</strong> 10:00 AM</p>
+                    <p><strong>Location:</strong> Palghar</p>
+                </div>
+                <div class="action-buttons">
+                    <button class="accept">Accept</button>
+                    <button class="reject">Reject</button>
+                </div>
+            </div>
+        </div>
+        <!-- Add more booking sections for other pending bookings -->
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Registration</title>
+   
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        form {
+            background: #fff;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        input[type="number"],
+        select {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"],
+        input[type="button"] {
+            background-color: #007BFF;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        input[type="submit"]:hover,
+        input[type="button"]:hover {
+            background-color: #b31b00;
+        }
+
+        /* Apply specific styling to form sections */
+        h2 {
+            color: #333;
+            font-size: 20px;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        /* Style for required fields */
+        input:required,
+        select:required {
+            border-color: #dc3545; /* Red border for required fields */
+        }
+
+        /* Style for validation messages (e.g., too short, too long) */
+        input:invalid {
+            border-color: #dc3545;
+        }
+
+        div {
+            border-color: #dc3545;
+        }
+
+        a {
+            text-decoration: none !important;
+        }
+
+        /* Responsive styles */
+        @media (max-width: 600px) {
+            form {
+                width: 90%;
+            }
+
+            input[type="text"],
+            input[type="email"],
+            input[type="password"],
+            input[type="number"],
+            select {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Customer Registration</h1>
+    <form action="process_registration" id="hmmm" method="post">
+        <!-- Userame field -->
+        <label for="name">Username:</label>
+        <input type="text" id="name" name="name" required>
+
+        <!-- Email field -->
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <!-- Password fields -->
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+
+        <label for="confirm_password">Confirm Password:</label>
+        <input type="password" id="confirm_password" name="confirm_password" required>
+    
+
+        
+
+        <!-- Service Preferences section -->
+        <h2>Service Preferences</h2>
+        <label for="service_type">Preferred Service Type:</label>
+        <select id="service_type" name="service_type" required>
+            <option value="plumber">Plumber</option>
+            <option value="electrician">Electrician</option>
+            <option value="cleaning">Cleaning</option>
+            <option value="carpenter">Carpenter</option>
+            <option value="painter">Painter</option>
+            <option value="swiper">Swiper</option>
+            <!-- Add more service options as needed -->
+        </select>
+
+        <label for="service_area">Preferred Service Area:</label>
+        <input type="text" id="service_area" name="service_area" required>
+
+        <!-- Submit button -->
+        <input type="submit" value="Register">
+        
+        <!-- Login link -->
+        <p>Already have an account? <a href="signup2.html">Login Here</a></p>
+    </form>
+
+   
+
+<!-- JavaScript for OTP functionality -->
+<script>
+    let generatedOTP;  // Variable to store the generated OTP
+
+    function generateOTP() {
+        // Simulate OTP generation (you should use a real service in a production environment)
+        generatedOTP = Math.floor(1000 + Math.random() * 9000);
+        alert(`Your OTP is: ${generatedOTP}`);
+
+        // Show the OTP input field
+        document.getElementById("otpSection").style.display = "block";
+    }
+
+    function verifyOTP() {
+        const enteredOTP = document.getElementById("otpInput").value;
+        // Check if the entered OTP matches the generated OTP
+        if (enteredOTP === generatedOTP.toString()) {
+            alert("OTP verified successfully. Sign up complete!");
+        } else {
+            alert("Invalid OTP. Please try again.");
+        }
+    }
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script>
+<script src="./mail.js"></script> 
+
+
+</body>

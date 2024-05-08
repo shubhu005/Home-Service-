@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+   
+    <title>Plumber Service</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #007bff;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+        }
+        h1 {
+            font-size: 24px;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 50px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        p {
+            font-size: 18px;
+        }
+        a {
+            text-decoration: none;
+            color: #007bff;
+        }
+    
+  
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #333638;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+        }
+        h1 {
+            font-size: 24px;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 50px auto;
+            background-color: #f1f6f9;
+            padding: 50px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        p {
+            font-size: 18px;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+        input[type="date"], input[type="time"], input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Plumber Service Booking</h1>
+    </header>
+    
+    <div class="container">
+        <h2>Book a Plumber</h2>
+        
+        <p>Select a day and time for your plumber service:</p>
+        <form id="bookingForm">
+            <input type="date" id="bookingDate" required>
+        </br> 
+            <label for="bookingTime">Select Time:</label>
+            <input type="time" id="bookingTime" required>
+        </br> 
+            <label for="Location">Location:</label></br>
+            <input type="text" id="Location" name="Location" required>
+        </br> </br>
+
+            <input type="submit" value="Book Plumber">
+        </form>
+        <div class="container">
+            <h2>Welcome to Our Plumber Service</h2>
+            <p>We provide professional plumbing services for all your plumbing needs. Our experienced plumbers are ready to assist you with:</p>
+            <ul>
+                <li>Leak repair</li>
+                <li>Drain cleaning</li>
+                <li>Pipe installation</li>
+                <li>Fixture replacement</li>
+            </ul>
+
+        </div>
+    </div>
+
+    <script>
+        const bookingForm = document.getElementById('bookingForm');
+
+        bookingForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const selectedDate = document.getElementById('bookingDate').value;
+            const selectedTime = document.getElementById('bookingTime').value;
+            const selectedLocation = document.getElementById('Location').value;
+
+            // Here, you can send the booking details to the server for processing.
+            // You would typically make an API request to your back-end to store the booking.
+
+            alert(`Plumber booked for ${selectedDate} at ${selectedTime} at ${Location}`);
+           
+        });
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Hand Easy || Sevice & Repair</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="shortcut icon" type="png" href="HAND.jpg">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat|Roboto" rel="stylesheet">
+<style>
+
+
+html {
+  font-size: 62.5%;
+}
+body {
+  padding: 1rem 2.5rem;
+  font-family: "Roboto", sans-serif;
+  box-sizing: border-box;
+}
+
+.header {
+  height: 95vh;
+  background-image: linear-gradient(
+      to right,
+      rgba(95, 91, 126, 0.4),
+      rgba(60, 44, 241, 0.4),
+      rgba(70, 238, 238, 0.4)
+    ),
+    url(home.png);
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  position: relative;
+  clip-path: polygon(0 0, 80% 0, 100% 30%, 100% 100%, 20% 100%, 0 70%);
+}
+
+.logo-box {
+  position: absolute;
+  top: 2.5rem;
+  left: 2.5rem;
+  transition: 0.3s;
+}
+
+.logo {
+  width: 7rem;
+}
+
+.logo-box:hover {
+  cursor: pointer;
+  transform: rotate(360deg);
+}
+
+.text-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.heading-primary {
+  color: #fff;
+  text-transform: uppercase;
+  backface-visibility: hidden;
+}
+
+.heading-primary-main {
+  font-size: 8rem;
+  letter-spacing: 2rem;
+  font-family: monospace;
+  display: flow-root;
+  margin-bottom: 2rem;
+}
+
+.heading-primary-sub {
+  display: block;
+  font-size: 2rem;
+  letter-spacing: 1rem;
+   font-family: cursive;
+  margin-bottom: 10rem;
+}
+
+.btn:link,
+.btn:visited {
+  text-decoration: none;
+  padding: 2rem 5rem;
+  display: inline-block;
+  border-radius: 5rem;
+  font-weight: bold;
+  letter-spacing: 0.5rem;
+  font-size: 1.6rem;
+  transition: 0.2s;
+  border: none;
+  position: relative;
+}
+
+.btn:hover {
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.5);
+  color: #fff;
+  background: #007bff;
+}
+
+.btn-primary {
+  background-color: #fff;
+  color: rgb(15, 12, 41);
+}
+
+.btn::after {
+  content: "";
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  border-radius: 5rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: 0.3s;
+}
+
+.btn-primary::after {
+  background-color: #fff;
+}
+
+.btn:hover::after {
+  transform: scale(2);
+  opacity: 0;
+}
+
+.section-about {
+  background: rgb(250, 250, 250);
+  padding: 30rem 0 20rem 0;
+  margin-top: -30vh;
+}
+
+.head-secondary {
+  text-transform: uppercase;
+  font-size: 3.5rem;
+  letter-spacing: 2rem;
+  font-weight: 700;
+  background: linear-gradient(
+    to right,
+    rgb(64, 3, 245),
+    rgb(224, 75, 6),
+    rgb(244, 5, 236)
+  );
+  color: transparent;
+  cursor: pointer;
+  display: inline-block;
+  
+  margin-bottom: 5rem;
+  transition: 0.3s;
+  margin-top: 5rem;
+}
+
+.head-secondary:hover {
+  transform: scale(1.05);
+}
+
+.center {
+  text-align: center;
+}
+
+.card-box {
+  width: 100%;
+}
+
+.container {
+  margin: 0 auto;
+}
+
+.card-parent {
+  display: inline-block;
+  width: 30rem;
+  height: 35rem;
+  margin: 3rem;
+  /*transition: 0.3s;*/
+  /*background: #fff;*/
+  border-radius: 0.3rem;
+  perspective: 100rem;
+}
+
+.card {
+  width: inherit;
+  height: inherit;
+  position: absolute;
+  transition: 1s;
+  background: #fff;
+  border-radius: 0.5rem;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  backface-visibility: hidden;
+}
+
+.second {
+  background: #fff;
+  transform: rotateY(-180deg);
+  padding: 0 2rem;
+  overflow: hidden;
+}
+
+.card img {
+  display: inline-block;
+  width: 29rem;
+  height: 30rem;
+}
+
+/*.card:hover{
+	cursor: pointer;
+	transform: scale(1.05);
+	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}*/
+
+.card-parent:hover .first {
+  transform: rotateY(180deg);
+}
+
+.card-parent:hover .second {
+  transform: rotateY(0deg);
+}
+
+.card:hover .card-info {
+  transition: inherit;
+}
+
+.card-info {
+  display: inline-block;
+  font-size: 2rem;
+  text-decoration: underline;
+  letter-spacing: 0.5rem;
+}
+
+.second .card-info {
+  line-height: 7rem;
+}
+
+.card-description {
+  font-size: 1.7rem;
+  text-align: left;
+}
+
+
+
+	</style>
+</head>
+<body>
+	
+	<main>
+		<section class="section-about" id="section-about">
+			<div class="center">
+				<h1 class="head-secondary">
+					services We provide
+					<hr>
+				</h1>
+				
+				<div class="card-box">
+					<div class="container">
+						<div class="card-parent">
+							<div class="card first">
+								<img src="p.jpg">
+								<span class="card-info">Plumber</span>
+							</div>
+							<div class="second card">
+								<span class="card-info">Plumber</span>
+								<p class="card-description">
+								Proven experience as a plumber. Installing and repairing fixtures and pipes that carry liquids and gases in businesses, homes and factories. Designing water and heating systems. Working knowledge of heating and ventilation systems as well as appliances. 
+								</p>
+							</div>
+						</div>
+						<div class="card-parent">
+							<div class="card first">
+								<img src="painter.jpg">
+								<span class="card-info">Painter</span>
+							</div>
+							<div class="second card">
+								<span class="card-info">Painter</span>
+								<p class="card-description">
+								Excellent knowledge of painting material and how to select, mix, and apply them. Solid knowledge of commercial and/or construction painting techniques.Aptitude in using appropriate tools (brushes, caulking guns, etc.).Good basic math skills.
+								</p>
+							</div>
+						</div>
+						<div class="card-parent">
+							<div class="card first">
+								<img src="ele.jpg">
+								<span class="card-info">Electrician</span>
+							</div>
+							<div class="second card">
+								<span class="card-info">Electrician</span>
+								<p class="card-description">
+								Valid license to practice profession, Working knowledge of heating and ventilation systems as well as appliances.Ability to handle electrical tools and equipment (wire strippers, pliers, etc.).Good communication and interpersonal skills.Friendly with a great deal of patience.
+								</p>
+							</div>
+						</div>
+						<div class="card-parent">
+							<div class="card first">
+								<img src="cleaner.png">
+								<span class="card-info">Cleaner</span>
+							</div>
+							<div class="second card">
+								<span class="card-info">Cleaner</span>
+								<p class="card-description">
+								Proven working experience as a cleaner. Ability to handle heavy equipment and machinery. Knowledge of cleaning chemicals and supplies. Familiarity with Material Safety Data Sheets.
+								</p>
+							</div>
+						</div>
+						<div class="card-parent">
+							<div class="card first">
+								<img src="carpentary.jpg">
+								<span class="card-info">Carpenter</span>
+							</div>
+							<div class="second card">
+								<span class="card-info">Carpenter</span>
+								<p class="card-description">
+								Proven experience as a carpenter. Hands-on experience in working with carpentry materials. Excellent understanding of carpentry techniques and methods of installation and construction. Proficient in using electrical and manual equipment and measurement tools (powered saws, hammers, rulers etc.). Ability to read technical documents and drawings.
+								</p>
+							</div>
+						</div>
+						<div class="card-parent">
+							<div class="card first">
+								<img src="beauty.webp">
+								<span class="card-info">Beautician</span>
+							</div>
+							<div class="second card">
+								<span class="card-info">Beautician</span>
+								<p class="card-description">
+								Proven work experience as a beautician, cosmetologist, or similar position. Hands-on experience with makeup and hair removal techniques.Removing hair using permanent and temporary methods (e.g., electrolysis and waxing).
+								</p>
+								<p></p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<h1 class="head-secondary">
+					
+					service || repair
+				</h1>
+			</div>
+		</section>
+		
+	</main>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script type="text/javascript" src="script/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><b>Service Provider Dashboard</b></title>
+    <style>
+       /* Basic CSS styling */
+       body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom, #9698f8, #f4895b);
+            color: #250000;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: rgba(62, 248, 235, 0.9);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-image: url('paint1.avif');
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #310129;
+        }
+
+        .profile-info {
+            margin-bottom: 20px;
+        }
+
+        .stats {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .stat {
+            flex: 1;
+            text-align: center;
+            border: 1px solid #10edaa;
+            border-radius: 5px;
+            padding: 10px;
+            background: linear-gradient(to bottom, #6cf194, #f763f7);
+            color: #680d0d;
+        }
+
+        .booking {
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid #4feebc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        .booking-details {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .customer-info {
+            flex: 1;
+        }
+
+        .action-buttons {
+            display: flex;
+            align-items: center;
+        }
+
+        .action-buttons button {
+            margin-left: 10px;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+
+        .accept {
+            background-color: #4caf50;
+            color: #fff;
+            border: none;
+        }
+
+        .reject {
+            background-color: #f44336;
+            color: #fff;
+            border: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="container">
+            <h1>Service Provider Dashboard</h1>
+            <div class="profile-info">
+                <h2>MY Profile</h2>
+                <!-- Your profile information goes here -->
+                <p><strong>Name:</strong> John Doe</p>
+                <p><strong>Email:</strong> john123@gmail.com</p>
+                <p><strong>Phone:</strong> 123456789</p>
+                <p><strong>Location:</strong> Palghar</p>
+                <!-- Add more profile information as needed -->
+            </div>
+            <div class="stats">
+                <div class="stat">
+                    <h3>Total Orders</h3>
+                    <p>5</p> <!-- Example value, replace with actual data -->
+                </div>
+                <div class="stat">
+                    <h3>Completed Orders</h3>
+                    <p>4</p> <!-- Example value, replace with actual data -->
+                </div>
+                <div class="stat">
+                    <h3>Pending Orders</h3>
+                    <p>1</p> <!-- Example value, replace with actual data -->
+                </div>
+            </div>
+            <!-- Booking section -->
+            <div class="booking">
+                <h2>New Booking</h2>
+                <div class="booking-details">
+                    <div class="customer-info">
+                        <p><strong>Customer Name:</strong> Jane Smith</p>
+                        <p><strong>Date:</strong> 2024-02-16</p>
+                        <p><strong>Time:</strong> 10:00 AM</p>
+                        <p><strong>Location:</strong> Palghar</p>
+                    </div>
+                    <div class="action-buttons">
+                        <button class="accept">Accept</button>
+                        <button class="reject">Reject</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Add more booking sections for other pending bookings -->
+        </div>
+    </div>
+
+    <!-- Firebase JavaScript SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.1.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.1.1/firebase-database.js"></script>
+
+    <script>
+
+
+        // Initialize Firebase with your project configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyAX97OXWvYR5Df3xFRPMUos_hBCBe5NUpE",
+            authDomain: "sujal-95f90.firebaseapp.com",
+            databaseURL: "https://sujal-95f90-default-rtdb.firebaseio.com",
+            projectId: "sujal-95f90",
+            storageBucket: "sujal-95f90.appspot.com",
+            messagingSenderId: "1009961067699",
+            appId: "1:1009961067699:web:f0348219261cb9022a3cc6",
+            measurementId: "G-3SERGEMPMS"
+        };
+
+        firebase.initializeApp(firebaseConfig);
+
+var contactFormSP = firebase.database().ref('contactFormSP');
+
+document.getElementById("index").addEventListener("submit", submitForm);
+
+function submitForm(e) {
+    e.preventDefault();
+
+    var Customername = getElementVal('Customername');
+    var date = getElementVal('date');
+    var time = getElementVal('time');
+    var lacation = getElementVal('location');
+   
+
+    // Create an object to store the form data
+    var formData = {
+        Customername: Customername,
+        date: date,
+        time: time,
+        location: location,
+        
+    };
+
+    // Push the form data to the database
+    contactFormSP.push(formData);
+
+    // Clear the form after submission
+    clearForm();
+
+    console.log(formData);
+}
+
+const getElementVal = (id) => {
+    const element = document.getElementById(id);
+    return element ? element.value : null;
+}
+
+
+function clearForm() {
+    const clearElementById = (id) => {
+        const element = document.getElementById(id);
+        if (element) {
+            element.value = '';
+        }
+    };
+
+    clearElementById('customername');
+    clearElementById('date');
+    clearElementById('time');
+    clearElementById('location');
+   
+}
+     
+
+
+firebase.initializeApp(firebaseConfig);
+
+        // Reference to the Firebase Realtime Database
+        const database = firebase.database();
+
+        // Function to submit a new booking
+        function submitBooking() {
+            const bookingData = {
+                customerName: "Jane Smith",
+                date: "2024-02-16",
+                time: "10:00 AM",
+                location: "Palghar"
+            };
+
+            // Push the booking data to the database
+            const bookingsRef = database.ref('bookings');
+            bookingsRef.push(bookingData)
+                .then(() => {
+                    console.log("Booking submitted successfully!");
+                })
+                .catch((error) => {
+                    console.error("Error submitting booking:", error);
+                });
+        }
+
+        // Example function to accept a booking
+        function acceptBooking(bookingId) {
+            // Update the booking status in the database
+            const bookingRef = database.ref('bookings/' + bookingId);
+            bookingRef.update({ status: "accepted" })
+                .then(() => {
+                    console.log("Booking accepted successfully!");
+                })
+                .catch((error) => {
+                    console.error("Error accepting booking:", error);
+                });
+        }
+
+        // Example function to reject a booking
+        function rejectBooking(bookingId) {
+            // Update the booking status in the database
+            const bookingRef = database.ref('bookings/' + bookingId);
+            bookingRef.update({ status: "rejected" })
+                .then(() => {
+                    console.log("Booking rejected successfully!");
+                })
+                .catch((error) => {
+                    console.error("Error rejecting booking:", error);
+                });
+        }
+
+        // You can define more functions for interacting with the database as needed
+    </script>
+</body>
+
+</html>

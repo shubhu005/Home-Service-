@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Page</title>
+    <!-- Include Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.2/firebase-firestore.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #F9EBEA;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .feedback-container {
+            background: #E8F8F5;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 350px;
+            max-width: 100%;
+        }
+
+        .feedback-container h1 {
+            color: #2C3E50;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .feedback-form input[type="text"],
+        .feedback-form select,
+        .feedback-form textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #1ABC9C;
+            border-radius: 6px;
+            margin-bottom: 20px;
+            box-sizing: border-box;
+            font-size: 16px;
+            background-color: #D5F5E3;
+            color: #2C3E50;
+        }
+
+        .feedback-form button[type="submit"] {
+            width: 100%;
+            padding: 12px;
+            background-color: #1ABC9C;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        .feedback-form button[type="submit"]:hover {
+            background-color: #148F77;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="feedback-container">
+        <h1>Service Feedback</h1>
+        <form class="feedback-form" id="feedbackForm" onsubmit="submitFeedback(event)">
+            <div>
+                <label for="name">Your Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div>
+                <label for="serviceType">Type of Service:</label>
+                <select id="serviceType" name="serviceType">
+                    <option value="cleaning">Cleaning</option>
+                    <option value="plumbing">Plumbing</option>
+                    <option value="electrical">Electrical</option>
+                    <option value="beautician">Carpenter</option>
+                    <option value="painter">Painter</option>
+                    <option value="sweeper">Sweeper</option>
+                </select>
+            </div>
+            <div>
+                <label for="rating">Rating:</label>
+                <select id="rating" name="rating">
+                    <option value="1">1 - Very Poor</option>
+                    <option value="2">2 - Poor </option>
+                    <option value="3">3 - Good</option>
+                    <option value="4">4 - Very Good</option>
+                    <option value="5">5 - Excellent</option>
+                </select>
+            </div>
+            <div>
+                <label for="comments">Comments:</label>
+                <textarea id="comments" name="comments" rows="4"></textarea>
+            </div>
+            <button type="submit">Submit Feedback</button>
+        </form>
+    </div>
+
+    <script>
+        // Initialize Firebase
+        const firebaseConfig = {
+            apiKey: "AIzaSyCcvb8WmcO5y6d4It1x83nfw2hhYbexjAw",
+            authDomain: "handeasy-123.firebaseapp.com",
+            databaseURL: "https://handeasy-123-default-rtdb.firebaseio.com",
+            projectId: "handeasy-123",
+            storageBucket: "handeasy-123.appspot.com",
+            messagingSenderId: "824051191338",
+            appId: "1:824051191338:web:32509e68469abf733dfd53"
+        };
+
+        // Initialize Firebase app
+        const firebaseApp = firebase.initializeApp(firebaseConfig);
+
+        // Initialize Firestore
+        const db = firebase.firestore();
+
+        function submit(event) {
+            event.preventDefault(); // Prevent form submission
+            const feedbackForm = document.getElementById('feed');
+
+            // Get form values
+            const name = feedbackForm.name.value;
+            const serviceType = feedbackForm.serviceType.value;
+            const rating = feedbackForm.rating.value;
+            const comments = feedbackForm.comments.value;
+
+            // Add feedback to Firestore
+            db.collection("feed").add({
+                name: name,
+                serviceType: serviceType,
+                rating: rating,
+                comments: comments,
+                timestamp: firebase.firestore.FieldValue.serverTimestamp() // Add timestamp
+            })
+                .then(function (docRef) {
+                    alert("Feedback submitted successfully!");
+                    // Reset form
+                    feedbackForm.reset();
+                })
+                .catch(function (error) {
+                    alert("Error submitting feedback. Please try again.");
+                });
+        }
+    </script>
+</body>
+
+</html>
